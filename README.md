@@ -1,4 +1,7 @@
 # Suspicious PowerShell Activity Detected: Attempted Malicious File Download and Execution
+
+<img width="1536" height="612" alt="image" src="https://github.com/user-attachments/assets/73436025-7f7b-4acd-bcb4-211cf8887598" />
+
 ## Platforms and Languages Leveraged
 * Windows Operating System
 * Microsoft Defender for Endpoint
