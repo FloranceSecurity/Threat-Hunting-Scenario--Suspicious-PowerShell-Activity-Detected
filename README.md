@@ -18,7 +18,7 @@ The activity shows signs of both automation and evasion, which can create a seri
 * **Check** `DeviceNetworkEvents` for any signs of outgoing connections initiated by `powershell.exe`, especially to unknown or unusual remote IPs and URLs.
 * **Check** `DeviceFileEvents` for any file creation or downloads performed by `powershell.exe` in non-standard or suspicious locations.
 ## Step 1: Hunting Suspicious PowerShell Activity
-```
+```kql
 DeviceProcessEvents
 | where DeviceName startswith "ARYA"
 | where FileName == "powershell.exe"
@@ -33,7 +33,7 @@ The output is sorted so that the most recent events appear first. This approach 
 <img width="1469" height="615" alt="image" src="https://github.com/user-attachments/assets/0e018edb-4f50-4cde-becd-8ee50715f174" />
 
 ## Step 2: Query Exluded Built-in Service Accounts
-```
+```kql
 DeviceProcessEvents
 | where DeviceName startswith "ARYA"
 | where FileName == "powershell.exe"
