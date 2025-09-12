@@ -45,7 +45,7 @@ To minimize noise, the query excludes events triggered by built-in service accou
 <img width="1511" height="342" alt="image" src="https://github.com/user-attachments/assets/85c0ee8a-429a-486e-a6f2-5eb0ec851ebb" />
 
 ## Step 3: Filtering for PowerShell Command-line Arguments
-```
+```kql
 DeviceProcessEvents
 | where DeviceName startswith "ARYA"
 | where FileName == "powershell.exe"
@@ -58,7 +58,7 @@ Another layer of filtering looks for `PowerShell command-line arguments` often a
 <img width="1498" height="364" alt="image" src="https://github.com/user-attachments/assets/dcd14d29-a847-4773-8409-fa0cb3009083" />
 
 ## Step 4: Displaying most relavant column
-```
+```kql
 DeviceProcessEvents
 | where DeviceName startswith "ARYA"
 | where FileName == "powershell.exe"
