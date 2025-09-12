@@ -9,8 +9,11 @@ powershell.exe -NoExit -ExecutionPolicy Bypass -WindowStyle Hidden $ErrorActionP
 
 ## Step 1 Start PowerShell with NoExit
 **What it does:** Starting PowerShell with NoExit keeps the shell open after the command returns. The process remains alive instead of terminating immediately.
-**What shows up in logs:**A long running powershell.exe process with a start time that does not match normal interactive sessions. Command line fields will include an argument that indicates the NoExit option. Event logs may show a spawn of powershell.exe with a parent process that is unusual for interactive shells.
+
+**What shows up in logs:** A long running powershell.exe process with a start time that does not match normal interactive sessions. Command line fields will include an argument that indicates the NoExit option. Event logs may show a spawn of powershell.exe with a parent process that is unusual for interactive shells.
+
 **Why an attacker likes this:** It allows follow on commands to execute in the same session, and it can leave the process present while other actions complete. That increases the window for the payload to be downloaded and run.
+
 **How to detect and respond:** Look for powershell.exe processes with abnormal lifetimes or nonstandard parent processes. Flag long lived PowerShell tokens that are not associated with legitimate admin sessions. If seen, collect process memory and command line arguments and isolate the host.
 
 Step 2 Set ExecutionPolicy to Bypass
