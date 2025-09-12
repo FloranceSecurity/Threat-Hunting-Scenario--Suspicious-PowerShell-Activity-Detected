@@ -73,7 +73,7 @@ Chaining these steps hides activity, bypasses local policy, and enables automate
 |---------------------|------------------------------------------------------------------------------|
 | **Name**| DeviceProcessEvents|
 | **Info**|https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-deviceinfo-table|
-| **Purpose**| Used to detect the silent installation of TOR as well as the TOR browser and service launching.|
+| **Purpose**| Used to detect process creation activity and related indicators, the DeviceProcessEvents records parent and child relationships, full command-line arguments, launching accounts, and executable metadata. This dataset is essential for identifying malicious script or executable launches. |
 
 ---
 
