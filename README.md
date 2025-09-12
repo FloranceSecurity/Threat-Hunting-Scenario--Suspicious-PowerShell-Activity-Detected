@@ -17,7 +17,9 @@ The activity shows signs of both automation and evasion, which can create a seri
 ## Hunting Suspicious PowerShell Activity
 >  DeviceProcessEvents
 | where DeviceName startswith "ARYA"
+> 
 | where FileName == "powershell.exe"
+>
 | order by Timestamp desc
 | where AccountName !in ("system", "local service")
 | where ProcessCommandLine has_any ("DownloadFile", "DownloadData", "DownloadString", "WebClient", "WebRequest", "http", "https", "-ExecutionPolicy", "-WindowStyle Hidden", "Bypass")
