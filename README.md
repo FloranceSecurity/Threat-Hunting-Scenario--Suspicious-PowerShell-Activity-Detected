@@ -102,6 +102,24 @@ Finally, the query selects and displays only the most relevant columns for inves
    * Account Name: arya
    * Initiating Process: powershell.exe
 
+## Summary
 
+Routine security monitoring identified multiple suspicious PowerShell executions on the Windows device arya-vm-onboard. The processes were launched with command-line arguments that attempted to bypass execution policies, run scripts in hidden windows, and automate the download and execution of files from a local web server. These behaviors are commonly linked to malware delivery techniques and reflected a combination of automation and evasion tactics.
+
+Advanced threat hunting in Microsoft Defender for Endpoint revealed the full scope of the activity, which allowed for a rapid and informed response to contain the potential threat before further compromise.
+
+## Response Taken
+
+Following the detection of malicious PowerShell indicators, several actions were executed to contain and investigate the incident:
+
+* `Device isolation:` The affected system (arya-vm-onboard) was immediately removed from the network to prevent lateral movement or further compromise.
+
+* `Forensic analysis:` A detailed investigation of the device was carried out to determine whether any payloads had been successfully executed or persisted.
+
+* `Account security:` All user sessions linked to the detected commands were reviewed, and associated credentials were reset as a precautionary measure.
+
+* `Incident reporting:` Management and stakeholders were informed, and required reporting and documentation procedures were completed.
+
+* `Preventive measures:` Security controls and automated detection rules were updated to identify similar PowerShell execution patterns and block future attempts.
 
 
