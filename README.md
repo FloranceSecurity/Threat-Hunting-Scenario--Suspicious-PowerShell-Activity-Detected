@@ -70,7 +70,7 @@ Finally, the query selects and displays only the most relevant columns for inves
 <img width="1491" height="373" alt="image" src="https://github.com/user-attachments/assets/f320c9b6-3adc-4660-bbdb-f225d4d7b0fe" />
 
 ## Chronological Event Timeline
-1. PowerShell Download Attempt
+### 1. PowerShell Download Attempt
    * Timestamp: Sep 12, 2025 4:39:12 AM
    * Device: arya-vm-onboard
    * Event: PowerShell launched with a command to download and execute a file using WebClient.
@@ -78,7 +78,7 @@ Finally, the query selects and displays only the most relevant columns for inves
    * Account Name: arya
    * Initiating Process: cmd.exe
 
-2. PowerShell Script Automation (Hidden Window)
+### 2. PowerShell Script Automation (Hidden Window)
    * Timestamp: Sep 12, 2025 4:40:18 AM
    * Device: arya-vm-onboard
    * Event: PowerShell launched with a hidden window, bypassed execution policy, and 'SilentlyContinue' flag for error handling.
@@ -86,7 +86,7 @@ Finally, the query selects and displays only the most relevant columns for inves
    * Account Name: arya
    * Initiating Process: powershell.exe
 
-3. Repeated Script Execution Using Automation Flags
+### 3. Repeated Script Execution Using Automation Flags
    * Timestamp: Sep 12, 2025 4:41:13 AM
    * Device: arya-vm-onboard
    * Event: Another PowerShell instance started with similar bypass and hidden execution arguments, continuing the pattern of automated actions.
@@ -94,7 +94,7 @@ Finally, the query selects and displays only the most relevant columns for inves
    * Account Name: arya
    * Initiating Process: powershell.exe
 
-4. Continued PowerShell Activity (Hidden/Bypass)
+### 4. Continued PowerShell Activity (Hidden/Bypass)
    * Timestamp: Sep 12, 2025 4:41:54 AM
    * Device: arya-vm-onboard
    * Event: PowerShell process persists with bypass and hidden execution, using "Continue=silentlycontinue".
