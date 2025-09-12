@@ -15,7 +15,7 @@ The activity shows signs of both automation and evasion, which can create a seri
 * Check `DeviceNetworkEvents` for any signs of outgoing connections initiated by `powershell.exe`, especially to unknown or unusual remote IPs and URLs.
 * Check `DeviceFileEvents` for any file creation or downloads performed by `powershell.exe` in non-standard or suspicious locations.
 ## Hunting Suspicious PowerShell Activity
-`DeviceProcessEvents
+>  DeviceProcessEvents
 | where DeviceName startswith "ARYA"
 | where FileName == "powershell.exe"
 | order by Timestamp desc
