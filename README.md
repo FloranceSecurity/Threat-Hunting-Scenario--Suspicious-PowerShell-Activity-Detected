@@ -22,7 +22,8 @@ DeviceProcessEvents
 | order by Timestamp desc
 | where AccountName !in ("system", "local service")
 | where ProcessCommandLine has_any ("DownloadFile", "DownloadData", "DownloadString", "WebClient", "WebRequest", "http", "https", "-ExecutionPolicy", "-WindowStyle Hidden", "Bypass")
-| project Timestamp, DeviceName, ActionType, FileName, ProcessCommandLine, AccountName, InitiatingProcessFileName, InitiatingProcessCommandLine, FolderPath, SHA256```
+| project Timestamp, DeviceName, ActionType, FileName, ProcessCommandLine, AccountName, InitiatingProcessFileName, InitiatingProcessCommandLine, FolderPath, SHA256
+```
 
 
 <img width="1383" height="698" alt="image" src="https://github.com/user-attachments/assets/f67b1db0-b72d-43f1-807d-078ab3e6c292" />
