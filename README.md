@@ -14,6 +14,10 @@ The activity shows signs of both automation and evasion, which can create a seri
 * Check `DeviceProcessEvents` for any `powershell.exe` process creation events with suspicious command-line arguments `(e.g., DownloadFile, WebClient, -ExecutionPolicy Bypass, -WindowStyle Hidden, http, or https)`.
 * Check `DeviceNetworkEvents` for any signs of outgoing connections initiated by `powershell.exe`, especially to unknown or unusual remote IPs and URLs.
 * Check `DeviceFileEvents` for any file creation or downloads performed by `powershell.exe` in non-standard or suspicious locations.
+##
+
+<img width="1383" height="698" alt="image" src="https://github.com/user-attachments/assets/f67b1db0-b72d-43f1-807d-078ab3e6c292" />
+
 
 
 
