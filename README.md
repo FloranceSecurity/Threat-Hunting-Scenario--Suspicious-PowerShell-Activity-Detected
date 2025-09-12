@@ -21,11 +21,12 @@ DeviceProcessEvents
 | where FileName == "powershell.exe"
 | order by Timestamp desc
 ```
-The query begins by pulling data from the DeviceProcessEvents table. This table logs every process that starts on endpoints protected by Microsoft Defender for Endpoint. It provides a detailed view of program execution across devices.
+The query begins by pulling data from the `DeviceProcessEvents` table. This table logs every process that starts on endpoints protected by Microsoft Defender for Endpoint. It provides a detailed view of program execution across devices.
 
-The scope is then narrowed to devices whose names start with ARYA, such as ARYA01 or ARYA-vm. This ensures the investigation is focused on a specific machine or group of machines. From there, the results are filtered further to include only entries where the process name is powershell.exe, highlighting PowerShell activity on the selected devices.
+The scope is then narrowed to devices whose names start with `ARYA, such as ARYA01 or ARYA-VM`. This ensures the investigation is focused on a specific machine or group of machines. From there, the results are filtered further to include only entries where the process name is `powershell.exe`, highlighting PowerShell activity on the selected devices.
 
 The output is sorted so that the most recent events appear first. This approach allows faster review of the latest suspicious activity without sifting through older data.
+
 <img width="1385" height="551" alt="image" src="https://github.com/user-attachments/assets/9a23daaa-db0a-4615-894e-570c1ead3bc0" />
 
 
