@@ -1,4 +1,4 @@
-# Suspicious PowerShell Activity Detected: Attempted Malicious File Download and Execution - Usage
+# Suspicious PowerShell Activity Detected: Attempted Malicious File Download and Execution - Attack Usage
 
 ## Overview:
 
@@ -111,4 +111,4 @@ Do not copy and paste unfamiliar commands into PowerShell. Exercise extreme caut
 ## Revision History:
 | **Version** | **Changes**         | **Date**              | **Modified By**   |
 |-------------|---------------------|-----------------------|-------------------|
-| 1.0         | Initial draft       | `September  6, 2024`  | `Arya Davidson`   |
+| 1.0         | Initial draft       | `September 11, 2025`  | `Arya Davidson`   |
