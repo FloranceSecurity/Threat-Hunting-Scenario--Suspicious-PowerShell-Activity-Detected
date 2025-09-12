@@ -1,1 +1,2 @@
-# Threat-Hunting-Scenario--Suspicious-PowerShell-Activity-Detected
+# Suspicious PowerShell Activity Detected: Attempted Malicious File Download and Execution
+
