@@ -27,7 +27,11 @@ The scope is then narrowed to devices whose names start with `ARYA, such as ARYA
 
 The output is sorted so that the most recent events appear first. This approach allows faster review of the latest suspicious activity without sifting through older data.
 
-<img width="1385" height="551" alt="image" src="https://github.com/user-attachments/assets/9a23daaa-db0a-4615-894e-570c1ead3bc0" />
+<img width="1469" height="615" alt="image" src="https://github.com/user-attachments/assets/0e018edb-4f50-4cde-becd-8ee50715f174" />
+
+##Step 2: Query Exluded Built-in Service Accounts
+
+To minimize noise, the query excludes events triggered by built-in service accounts like System and Local Service. This keeps the results centered on actions performed by real users or potential attackers.
 
 
 
