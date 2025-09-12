@@ -89,9 +89,9 @@ DeviceFileEvents
 ---
 
 ## Created By:
-- **Author Name**: Josh Madakor
-- **Author Contact**: https://www.linkedin.com/in/joshmadakor/
-- **Date**: August 31, 2024
+- **Author Name**: Arya Davidson Ani Florance
+- **Author Contact**: https://www.linkedin.com/in/arya-davidson-ani-florance/
+- **Date**: September 11, 2025
 
 ## Validated By:
 - **Reviewer Name**: 
@@ -101,12 +101,14 @@ DeviceFileEvents
 ---
 
 ## Additional Notes:
-- **None**
 
----
+Here is the thing. PowerShell is a legitimate, powerful tool for automation and system management. Its depth of access and integration into Windows also makes it attractive to attackers. Malicious actors commonly abuse PowerShell by hiding windows, bypassing execution policies, and automating downloads and execution to evade detection and gain persistence. Trusted scripts and files can be weaponized. Social engineering often lures users into running harmful commands.
 
+## Public warning
+
+Do not copy and paste unfamiliar commands into PowerShell. Exercise extreme caution with files or messages that instruct opening PowerShell or the Windows Run dialog. Report suspicious PowerShell activity to IT immediately and avoid further interaction with the suspect host or file. A few careless actions can lead to full system compromise.
+ 
 ## Revision History:
-| **Version** | **Changes**                   | **Date**         | **Modified By**   |
-|-------------|-------------------------------|------------------|-------------------|
-| 1.0         | Initial draft                  | `September  6, 2024`  | `Josh Madakor`   
-
+| **Version** | **Changes**         | **Date**              | **Modified By**   |
+|-------------|---------------------|-----------------------|-------------------|
+| 1.0         | Initial draft       | `September  6, 2024`  | `Arya Davidson`   |
