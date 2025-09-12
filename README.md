@@ -31,7 +31,9 @@ The output is sorted so that the most recent events appear first. This approach 
 
 ##Step 2: Query Exluded Built-in Service Accounts
 
-To minimize noise, the query excludes events triggered by built-in service accounts like System and Local Service. This keeps the results centered on actions performed by real users or potential attackers.
+To minimize noise, the query excludes events triggered by built-in service accounts like `System and Local Service`. This keeps the results centered on actions performed by real users or potential attackers.
+
+<img width="1511" height="342" alt="image" src="https://github.com/user-attachments/assets/85c0ee8a-429a-486e-a6f2-5eb0ec851ebb" />
 
 
 
