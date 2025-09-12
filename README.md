@@ -13,7 +13,9 @@ The activity shows signs of both automation and evasion, which can create a seri
 ## High-Level PowerShell-Related IoC Discovery Plan
 * Check DeviceProcessEvents for any powershell.exe process creation events with suspicious command-line arguments (e.g., DownloadFile, WebClient, -ExecutionPolicy Bypass, -WindowStyle Hidden, http, or https).
 * Check DeviceNetworkEvents for any signs of outgoing connections initiated by powershell.exe, especially to unknown or unusual remote IPs and URLs.
-* Check 'DeviceFileEvents' for any file creation or downloads performed by powershell.exe in non-standard or suspicious locations.
+* Check 'DeviceFileEvents for any file creation or downloads performed by powershell.exe in non-standard or suspicious locations.
+`DeviceProcessEvents`
+
 
 
 
