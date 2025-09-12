@@ -11,10 +11,9 @@ The attacker also used PowerShell to make web requests, trying to download an ex
 
 The activity shows signs of both automation and evasion, which can create a serious risk if not addressed quickly. Advanced hunting and event analysis in Microsoft Defender exposed these attempts in detail, which allowed for a rapid response and containment of the threat.
 ## High-Level PowerShell-Related IoC Discovery Plan
-* Check DeviceProcessEvents for any powershell.exe process creation events with suspicious command-line arguments (e.g., DownloadFile, WebClient, -ExecutionPolicy Bypass, -WindowStyle Hidden, http, or https).
-* Check DeviceNetworkEvents for any signs of outgoing connections initiated by powershell.exe, especially to unknown or unusual remote IPs and URLs.
-* Check 'DeviceFileEvents for any file creation or downloads performed by powershell.exe in non-standard or suspicious locations.
-`DeviceProcessEvents`
+* Check `DeviceProcessEvents` for any `powershell.exe` process creation events with suspicious command-line arguments `(e.g., DownloadFile, WebClient, -ExecutionPolicy Bypass, -WindowStyle Hidden, http, or https)`.
+* Check `DeviceNetworkEvents` for any signs of outgoing connections initiated by `powershell.exe`, especially to unknown or unusual remote IPs and URLs.
+* Check `DeviceFileEvents` for any file creation or downloads performed by `powershell.exe` in non-standard or suspicious locations.
 
 
 
