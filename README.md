@@ -16,7 +16,9 @@ The activity shows signs of both automation and evasion, which can create a seri
 * Check `DeviceFileEvents` for any file creation or downloads performed by `powershell.exe` in non-standard or suspicious locations.
 ## Hunting Suspicious PowerShell Activity
 >  DeviceProcessEvents
+
 >  | where DeviceName startswith "ARYA"
+
 >  | where FileName == "powershell.exe"
 >
 ==| order by Timestamp desc
